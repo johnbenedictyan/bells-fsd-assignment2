@@ -23,7 +23,7 @@ async function addTodo(name, description, priority) {
 async function viewTodos() {
   const res = await axios.get(URL + "/latest");
   console.log(res);
-  return res.data.record ?? [];
+  return res.data.record.filter(x => x) ?? [];
 }
 
 async function updateTodo(id, name, description, priority) {
