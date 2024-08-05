@@ -3,7 +3,7 @@ const URL = "https://api.jsonbin.io/v3/b/66aa1e44ad19ca34f88f654b";
 async function addTodo(name, description, priority) {
   const todos = await viewTodos();
   todos.push({
-    id: max(todos.map((x) => x.id)) + 1,
+    id: Math.max(todos.map((x) => x.id)) + 1,
     name,
     description,
     priority,
